@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    container_name: hacienda_app
+    ports:
+      - "8001:8001"
+    environment:
+      - DJANGO_SETTINGS_MODULE=hacienda_0.settings
+    volumes:
+      - .:/app
