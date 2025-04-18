@@ -1,15 +1,14 @@
-# services:
-#   web:
-#     build: .
-#     container_name: hacienda_app
-#     ports:
-#       - "8001:8001"
-#     environment:
-#       - DJANGO_SETTINGS_MODULE=hacienda_0.settings
-#     volumes:
-#       - .:/app
-
 services:
+  hacienda:
+    build: ./Hacienda-0.0/hacienda_0
+    container_name: hacienda_app
+    ports:
+      - "8001:8001"
+    environment:
+      - DJANGO_SETTINGS_MODULE=hacienda_0.settings
+    volumes:
+      - ./Hacienda-0.0/hacienda_0:/app
+
   cattle:
     build:
       context: ./cattlelog
