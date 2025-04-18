@@ -63,13 +63,13 @@ services:
       - ./portfolio:/usr/share/nginx/html
     restart: always
 
-  nginx:
+  nginx_proxy:
     image: nginx:alpine
     container_name: nginx_proxy
     ports:
       - "80:80"
     volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/custom.conf:ro
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
       - ./portfolio:/usr/share/nginx/html:ro
     depends_on:
       - cattle
