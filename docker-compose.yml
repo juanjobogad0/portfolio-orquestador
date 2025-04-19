@@ -20,8 +20,7 @@ services:
     image: nginxproxy/acme-companion
     container_name: nginx_acme
     environment:
-      - DEFAULT_EMAIL=juanjosebogado93@gmail.com # ⚠️ CAMBIALO por uno tuyo
-    volumes:
+      - DEFAULT_EMAIL=juanjosebogado93@gmail.com
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./certs:/etc/nginx/certs
       - ./acme:/etc/acme.sh
@@ -32,7 +31,7 @@ services:
       - nginx-network
 
   hacienda:
-    build: ./Hacienda-0.0/hacienda_0
+    build: ./Hacienda-0.0/hacienda_0/hacienda_0
     container_name: hacienda_app
     expose:
       - "8001"
